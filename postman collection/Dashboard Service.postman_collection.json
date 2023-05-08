@@ -1,0 +1,37 @@
+{
+	"info": {
+		"_postman_id": "201960f2-3129-4d64-bb5e-2efda71fe721",
+		"name": "Dashboard Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Post Signal Call",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"client_id\": \"SS1006\",\r\n    \"symbol\": \"XYXUSD\",\r\n    \"timeframe\": \"15m\",\r\n    \"price\": 32345.67,\r\n    \"currency\": \"USD\",\r\n    \"base_currency\": \"XYZ\",\r\n    \"updated_time\": \"timestamp2\",\r\n    \"comments\": \"test request for this api\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/addAppDataSignal",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"addAppDataSignal"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
