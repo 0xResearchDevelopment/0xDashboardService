@@ -10,6 +10,7 @@ import com.gtsrd.dashboardservice.entity.AppDataSignal;
 import com.gtsrd.dashboardservice.repository.AppDataSignalRepository;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Service
@@ -21,5 +22,9 @@ public class AppDataSignalService {
 		repository.save(appDataSignal);
 		ApiResponse apiResponse = new ApiResponse();
 		return apiResponse;
+	}
+
+	public List<AppDataSignal> getAppDataSignals() {
+		return repository.findAll();
 	}
 }

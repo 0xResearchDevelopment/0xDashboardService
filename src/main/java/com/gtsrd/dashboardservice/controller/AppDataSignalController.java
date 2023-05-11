@@ -2,18 +2,15 @@ package com.gtsrd.dashboardservice.controller;
 
 import com.gtsrd.dashboardservice.response.ApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.gtsrd.dashboardservice.entity.AppDataSignal;
 import com.gtsrd.dashboardservice.service.AppDataSignalService;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/data/api/v1/signals")
 public class AppDataSignalController {
 	
@@ -24,4 +21,10 @@ public class AppDataSignalController {
     public ApiResponse addAppDataSignal(@RequestBody AppDataSignal appDataSignal) {
         return service.saveAppDataSignal(appDataSignal);
     }
+
+    @GetMapping("/appDataSignals")
+    public List<AppDataSignal> fetchAppDataSignals() {
+        return service.getAppDataSignals();
+    }
+
 }

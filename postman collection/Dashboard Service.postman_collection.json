@@ -6,13 +6,13 @@
 	},
 	"item": [
 		{
-			"name": "Post Signal Call",
+			"name": "Add Signal - Local",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"client_id\": \"SS1006\",\r\n    \"symbol\": \"XYXUSD\",\r\n    \"timeframe\": \"15m\",\r\n    \"price\": 32345.67,\r\n    \"currency\": \"USD\",\r\n    \"base_currency\": \"XYZ\",\r\n    \"updated_time\": \"timestamp2\",\r\n    \"comments\": \"test request for this api\"\r\n}",
+					"raw": "{\r\n    \"client_id\": \"SS5555\",\r\n    \"symbol\": \"XYXUSD\",\r\n    \"timeframe\": \"15m\",\r\n    \"price\": 32345.67,\r\n    \"currency\": \"USD\",\r\n    \"base_currency\": \"XYZ\",\r\n    \"updated_time\": \"timestamp2\",\r\n    \"comments\": \"test request - testing for angular integration\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -20,14 +20,100 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:9191/addAppDataSignal",
+					"raw": "http://localhost:9090/data/api/v1/signals/addAppDataSignal",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "9191",
+					"port": "9090",
 					"path": [
+						"data",
+						"api",
+						"v1",
+						"signals",
 						"addAppDataSignal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Signal - Cloud",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"client_id\": \"SS3333\",\r\n    \"symbol\": \"XYXUSD\",\r\n    \"timeframe\": \"15m\",\r\n    \"price\": 32345.67,\r\n    \"currency\": \"USD\",\r\n    \"base_currency\": \"XYZ\",\r\n    \"updated_time\": \"timestamp2\",\r\n    \"comments\": \"test request in AWS Beanstalk\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://dashboardservice.us-east-2.elasticbeanstalk.com/data/api/v1/signals/addAppDataSignal",
+					"protocol": "http",
+					"host": [
+						"dashboardservice",
+						"us-east-2",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"data",
+						"api",
+						"v1",
+						"signals",
+						"addAppDataSignal"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Signals - Cloud",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://dashboardservice.us-east-2.elasticbeanstalk.com/data/api/v1/signals/appDataSignals",
+					"protocol": "http",
+					"host": [
+						"dashboardservice",
+						"us-east-2",
+						"elasticbeanstalk",
+						"com"
+					],
+					"path": [
+						"data",
+						"api",
+						"v1",
+						"signals",
+						"appDataSignals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Signals - AWS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/data/api/v1/signals/appDataSignals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"data",
+						"api",
+						"v1",
+						"signals",
+						"appDataSignals"
 					]
 				}
 			},
